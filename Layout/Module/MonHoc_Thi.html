@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="js/layout.js"></script>
+</head>
+<body>
+
+<div class="container" ng-controller="myCtrl">
+
+    <h1 class="text-center" style="color: #ff7915;padding: 3%"><b>CHỌN MÔN HỌC ĐỂ THI</b></h1>
+    <div class="poly-sheet row">
+
+        <article class="row col-sm-9 ">
+
+            <!--Nội dung trang web-->
+            <div class="card" ng-repeat="s in subjects|limitTo:4:begin" style="width: 42%;margin: 25px">
+                <div class="card-body text-center" style="height: 50px">
+                    <a href="#!quizs/{{s.Id}}" ><img src="css/images/dmmh/{{s.Logo}}" width="100%" height="250px" /></a>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#!quizs/{{s.Id}}" >{{s.Name}}</a>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center"><h6>{{begin+1}}/{{subjects.length}}</h6><br>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link"  ng-click="first()"><span class="fas fa-angle-double-left"></span> </a></li>
+                    <li class="page-item"><a class="page-link"  ng-click="prev()"><span class="fas fa-angle-left"></span> </a></li>
+                    <li class="page-item"><a class="page-link"  ng-click="next()"><span class="fas fa-angle-right"></span> </a></li>
+                    <li class="page-item"><a class="page-link"  ng-click="last()"><span class="fas fa-angle-double-right"></span> </a></li>
+                </ul>
+
+            </div>
+        </article>
+
+        <aside class="col-sm-3">
+
+            <div class="panel-group">
+
+                <!--DANH MỤC MÔN HỌC-->
+                <div class="card">
+                    <div class="card-header text-center">DANH MỤC MÔN HỌC</div>
+                    <div ng-repeat="s in subjects">
+                        <a href="#!quizs/{{s.Id}}" class="list-group-item" >
+                            <img src="css/images/dmmh/{{s.Logo}}" width="20" height="20" /> {{s.Name}}
+
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </aside>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

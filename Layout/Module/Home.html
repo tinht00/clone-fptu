@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="js/layout.js"></script>
+</head>
+<body ng-app="myApp">
+
+<!--CAROUSEL-->
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="css/images/carousel_img1.png"/>
+        </div>
+        <div class="carousel-item">
+            <img src="css/images/carousel_img2.png"/>
+        </div>
+        <div class="carousel-item">
+            <img src="css/images/carousel_img3.jpg"/>
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<article>
+    <div id="reason">
+        <div class="container">
+            <div class="title-reas text-center">
+                <h2>VÌ SAO <span style="font-size: 120%;">20.000</span> SINH VIÊN CHỌN ĐẠI HỌC FPT?</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-2 text-center" style="margin-left: 6%">
+                    <p class="big">5★</p>
+                    <p class="text-top-small">CHẤT LƯỢNG<br>ĐÀO TẠO</p>
+                </div>
+                <div class="col-md-2  text-center" style="margin-left: -2%">
+                    <p class="big"><img src="css/images/img-top2-qtkd.png"/></p>
+                    <p class="text-top-small">QUẢN TRỊ KINH DOANH<br>TỐT NHẤT VIỆT NAM</p>
+                </div>
+                <div class="col-md-2  text-center" style="margin-left: 2%">
+                    <p class="big">96%</p>
+                    <p class="text-top-small">SINH VIÊN CÓ<br>VIỆC LÀM NGAY</p>
+                </div>
+                <div class="col-md-2  text-center" style="margin-left: 2%">
+                    <p class="big">19%</p>
+                    <p class="text-top-small">Sinh viên có<br>việc làm tại nước ngoài</p>
+                </div>
+                <div class="col-md-2  text-center" style="margin-left: 2%">
+                    <p class="big"><img src="css/images/img-salary.png"/></p>
+                    <p class="text-top-small">LÀ MỨC LƯƠNG<br>TRUNG BÌNH</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    NGÀNH ĐÀO TẠO-->
+    <div class="container">
+        <div class=" text-center">
+            <h2 class="title-ndt">NGÀNH ĐÀO TẠO</h2>
+        </div>
+
+        <div class="row">
+            <div class="col text-center" >
+                <img src="css/images/ndt_cntt.png"/>
+                <p class="text-small">Công nghệ thông tin</p>
+            </div>
+            <div class="col text-center">
+                <img src="css/images/ndt_qtkd.png"/>
+                <p class="text-small">Quản trị kinh doanh</p>
+            </div>
+            <div class="col text-center">
+                <img src="css/images/ndt_nna.png"/>
+                <p class="text-small">Ngôn ngữ Anh</p>
+            </div>
+            <div class="col text-center">
+                <img src="css/images/ndt_nnn.png"/>
+                <p class="text-small">Ngôn ngữ Nhật</p>
+            </div>
+            <div class="col text-center">
+                <img src="css/images/ndt_nnhq.png"/>
+                <p class="text-small">Ngôn ngữ Hàn Quốc</p>
+            </div>
+        </div>
+
+        <!--TIN TỨC-->
+        <div class=" text-center">
+            <h2 class="title-tt">TIN TỨC</h2>
+        </div>
+        <div class="row tt-img">
+            <div class="col-sm-4">
+                <a href="#">
+                    <img src="css/images/tt1.jpg"/>
+                    <p>Vì sao các câu lạc bộ (CLB) ở trường F lại “hot” đến thế?</p>
+                </a>
+                <a href="#">
+                    <img src="css/images/tt2.png"/>
+                    <p>Người cách ly hài lòng với điều kiện ăn ở tại ký túc xá ĐH FPT</p>
+                </a>
+            </div>
+
+            <div class="col-sm-4">
+                <a href="#">
+                    <img src="css/images/tt3.jpg"/>
+                    <p>Ấn tượng với sản phẩm đồ hoạ về “Cuộc chiến chống Covid-19” của sinh viên trường F</p>
+                </a>
+                <a href="#">
+                    <img src="css/images/tt4.jpg"/>
+                    <p>2k2 chú ý: Bộ Giáo dục & Đào tạo hướng dẫn tinh giản chương trình THPT</p>
+                </a>
+            </div>
+
+
+            <div class="col-sm-4 ttth">
+                <a href="#">
+                    <p class="text-ttth1">17 việc sinh viên trường F nên làm trong mùa dịch COVID-19</p>
+                    <p class="text-ttth2">01/04/2020</p>
+                </a><hr>
+                <a href="#">
+                    <p class="text-ttth1">Thí sinh 2k2 sớm bộc lộ nhiều tài năng nghệ thuật ấn tượng</p>
+                    <p class="text-ttth2">01/04/2020</p>
+                </a><hr>
+                <a href="#">
+                    <p class="text-ttth1">Trường ĐH FPT chỉ xét tuyển thí sinh có điểm xếp hạng thuộc TOP50</p>
+                    <p class="text-ttth2">31/03/2020</p>
+                </a><hr>
+                <a href="#">
+                    <p class="text-ttth1">Đại học FPT ra mắt trang SchoolRank xếp hạng học sinh THPT toàn quốc</p>
+                    <p class="text-ttth2">31/03/2020</p>
+                </a><hr>
+                <a href="#">
+                    <p class="text-ttth1">Thuỵ Điển – điểm đến của sinh viên trường F trong kỳ <Exchange></Exchange></p>
+                    <p class="text-ttth2">31/03/2020</p>
+                </a><hr>
+
+            </div>
+
+        </div>
+
+    </div>
+</article>
+
+</body>
+</html>

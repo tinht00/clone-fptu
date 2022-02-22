@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<div class="container" >
+    <h1 class="text-center" style="color: #ff7915;padding: 3%"><b>ĐỔI MẬT KHẨU</b></h1>
+
+    <form name="frmBonus">
+        <div class="form-group">
+            <label >Tên tài khoản *</label>
+            <input type="text" class="form-control"  ng-model="user"  placeholder="Tài Khoản..." name="user" required>
+            <span ng-show="frmBonus.user.$invalid" style="color: #b21f2d">Vui lòng nhập tên tài khoản</span>
+        </div>
+        <div class="form-group">
+            <label >Mật khẩu hiện tại *</label>
+            <input type="password" class="form-control"   ng-model="passw" placeholder="Mật khẩu hiện tại..." name="mkht" required>
+            <span ng-show="frmBonus.mkht.$invalid" style="color: #b21f2d">Vui lòng nhập mật khẩu hiện tại</span>
+        </div>
+        <div class="form-group">
+            <label >Mật khẩu mới *</label>
+            <input type="password" class="form-control"  ng-model="newpassw" placeholder="Mật khẩu mới..." name="mkm" required>
+            <span ng-show="frmBonus.mkm.$invalid" style="color: #b21f2d">Vui lòng nhập mật khẩu mới</span>
+        </div>
+        <div class="form-group">
+            <label >Nhập lại mật khẩu mới *</label>
+            <input type="password" class="form-control" ng-model="xnpassw" placeholder="Nhập lại mật khẩu mới..." name="nl_mkm" required>
+            <span ng-show="frmBonus.nl_mkm.$invalid" style="color: #b21f2d">Vui lòng nhập lại mật khẩu mới</span>
+        </div>
+
+        <button type="submit" class="btn" ng-click="update()" style="background-color: #ff9925; color: white">Đổi mật khẩu</button>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <script src="js/layout.js"></script>
+    <script src="js/Subjects.js"></script>
+    <script src="js/Students.js"></script>
+    <script src="js/DoiMKCtrl.js"></script>
+    <script src="js/SuaTTCtrl.js"></script>
+    <script src="js/RegisterCtrl.js"></script>
+
+
+</head>
+<body ng-app="myApp" >
+<!--HEADER-->
+<div class="container hder" ng-include="'Layout/Header.html'"></div>
+<!--HEADER-->
+
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-sm navbar-light bg-nav" ng-include="'Layout/Menu.html'"></nav>
+<!--NAVBAR-->
+
+<!--BODY-->
+
+    <!--Nội dung trang web-->
+    <div ng-show="loading" class="float-right badge badge-info">
+        Loading....
+    </div>
+    <ng-view></ng-view>
+
+<!--BODY-->
+<!--FOOTER-->
+<footer class="card-footer text-center footer" ng-include="'Layout/Footer.html'"></footer>
+<!--FOOTER-->
+
+<script src="js/QuizsCtrl.js"></script>
+<script src="js/MonHoc_Quiz.min.js"></script>
+
+</body>
+</html>

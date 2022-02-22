@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+</head>
+<body>
+<div id="login" ng-app="myApp" ng-controller="lgCtrl">
+    <h1 class="text-center text-white pt-5"><b>TRANG ĐĂNG NHẬP</b></h1>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="" method="post">
+                        <h3 class="text-center text-info1">Đăng nhập</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info1">Tên tài khoản:</label><br>
+                            <input type="text" ng-model="user" name="username" id="username" class="form-control" placeholder="Nhập tên đăng nhập.." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="text-info1">Tên tài khoản:</label><br>
+                            <input type="password" ng-model="pass" name="pass" id="pass" class="form-control" placeholder="Nhập mật khẩu." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="remember-me" class="text-info1"><span>Nhớ mật khẩu</span> 
+                                <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                            <a ng-click="check()"  class="btn btn-info btn-md btn-login">
+                                Đăng nhập
+                            </a>
+                        </div>
+                        <div id="register-link" class="text-right">
+                            <a href="Forgot.html" class="text-info1"> Quên mật khẩu?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var app = angular.module("myApp",["ngRoute"]);
+    app.controller("lgCtrl", function ($scope,$http) {
+        var sv = [];
+        $http.get("js/Students.js").then(function (response) {
+            $scope.sv = response.data;
+        });
+        $scope.check = function () {
+            var i;
+            for(i = 0; i<$scope.sv.length;i++){
+                if($scope.user == $scope.sv[i].username && $scope.pass == $scope.sv[i].password){
+                    alert("Đăng nhập thành công!")
+                    location.replace("TrangChu.html")
+                    break;
+                }
+
+            }
+
+
+
+        }
+
+    });
+</script>
+</body>
+</html>

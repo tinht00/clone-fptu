@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+
+<div class="container">
+    <br>
+<div class="card">
+    <header class="card-header text-center"><h2>Quiz</h2>
+        <h4 id="ten-countdown"></h4>
+    </header>
+  <div class="card-body" style="min-height: 290px" ng-repeat="a in quizs|limitTo:1:begin">
+      <h5>{{a.Text}}</h5>
+      <div ng-repeat="b in a.Answers" ><input  type="radio"   name="{{a.Id}}" value="{{b.Id}}"/> {{b.Text}}</div>
+
+  </div>
+
+    <div class="card-footer text-center"><h6>{{begin+1}}/{{quizs.length}}</h6><br>
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link"  ng-click="first()"><span class="fas fa-angle-double-left"></span> </a></li>
+            <li class="page-item"><a class="page-link"  ng-click="prev()"><span class="fas fa-angle-left"></span> </a></li>
+            <li class="page-item"><a class="page-link"  ng-click="next()"><span class="fas fa-angle-right"></span> </a></li>
+            <li class="page-item"><a class="page-link"  ng-click="last()"><span class="fas fa-angle-double-right"></span> </a></li>
+        </ul>
+        <a href="#!quizs"><input type="submit" class="form-control btn btn-success" style="width: 10%" value="Kết thúc"></a>
+    </div>
+
+</div>
+
+    <br>
+
+</div>
+
+<script>
+    app.filter('percentage', function ($filter) {
+        return function (input, decimals) {
+            return $filter('number')(input * 100, decimals) + '%';
+        };
+    });
+
+    // JS CooldownTimer
+    function countdown( elementName, minutes, seconds )
+    {
+        var element, endTime, hours, mins, msLeft, time;
+
+        function twoDigits( n )
+        {
+            return (n <= 9 ? "0" + n : n);
+        }
+
+        function updateTimer()
+        {
+            msLeft = endTime - (+new Date);
+            if ( msLeft < 1000 ) {
+                element.innerHTML = "Time is up!";
+                // location.replace("testJson.html");
+            } else {
+                time = new Date( msLeft );
+                hours = time.getUTCHours();
+                mins = time.getUTCMinutes();
+                element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+                setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+            }
+        }
+
+        element = document.getElementById( elementName );
+        endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+        endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+        updateTimer();
+    }
+
+    countdown( "ten-countdown", 10, 0 );
+
+</script>
+</body>
+</html>

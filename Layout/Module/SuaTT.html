@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center" style="color: #ff7915;padding: 3%"><b>SỬA THÔNG TIN TÀI KHOẢN</b></h1>
+
+    <form class="panel-body" name="frmBonus">
+        <div class="form-group">
+            <label>Họ tên *</label>
+            <input class="form-control" ng-model="student.fullname" placeholder="Họ tên...." name="txtFullname" required />
+            <span ng-show="frmBonus.txtFullname.$invalid" style="color: #b21f2d">Vui lòng nhập họ và tên</span>
+        </div>
+        <div class="form-group">
+            <label>Email *</label>
+            <input name="txtEmail" class="form-control" ng-model="student.email" type="email" >
+            <div ng-hide="frmBonus.txtEmail.$valid" style="color: #b21f2d">Email không hợp lệ</div>
+        </div><div class="form-group">
+        <label>Ngày sinh *</label>
+        <input class="form-control" type="text" ng-model="student.birthday" name="txtBirthday"
+               ng-pattern="^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$" required />
+        <div ng-hide="frmBonus.txtBirthday.$valid" style="color: #b21f2d">Ngày sinh phải nhập đúng định dạng: dd-MM-yyyy hoặc yyyy-MM-dd</div>
+
+    </div>
+        <div class="form-group">
+            <label>Học phí</label>
+            <input name="floatSchoolfee"  class="form-control" type="text" ng-model="student.schoolfee" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+            <span ng-show="frmBonus.floatSchoolfee.$invalid" style="color: #b21f2d">Vui lòng nhập số</span>
+        </div>
+
+        <button type="submit" class="btn" style="background-color: #ff9925; color: white" ng-click="update()">Sửa</button>
+
+    </form>
+    <br>
+
+    <div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Tài khoản</th>
+                <th>Mật khẩu</th>
+                <th>Họ và tên</th>
+                <th>Email</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+                <th>Học phí</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="s in stu">
+                <td>{{s.username}}</td>
+                <td>{{s.password}}</td>
+                <td>{{s.fullname}}</td>
+                <td>{{s.email}}</td>
+                <td>{{s.gender == "true"?"Nam":"Nữ"}}</td>
+                <td>{{s.birthday | date : 'dd-MM-yyyy'}}</td>
+                <td>{{s.schoolfee | currency : 'VNĐ ' : 0}}</td>
+                <td>
+                    <button class="btn btn-outline-secondary" ng-click="edit($index)">Sửa</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
